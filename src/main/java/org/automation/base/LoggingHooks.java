@@ -8,19 +8,17 @@ import static org.openqa.selenium.OutputType.BYTES;
 
 import org.openqa.selenium.TakesScreenshot;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import io.cucumber.java8.En;
+import io.cucumber.java8.Scenario;
 
-public class LoggingHooks {
+public class LoggingHooks implements En {
 
-	@Before
-	public void setup(Scenario sc) {
-		info("Scenario [" + sc.getName() + "] execution started");
+	public LoggingHooks() {
+		Before((Scenario sc) -> info("Scenario [" + sc.getName() + "] execution started"));
+		After(this::after);
 	}
 
-	@After
-	public void teardown(Scenario sc) {
+	private void after(Scenario sc) {
 		clearCookies();
 		if (sc.isFailed()) {
 			error("Scenario [" + sc.getName() + "] " + sc.getStatus(), null);
