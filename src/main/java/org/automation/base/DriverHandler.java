@@ -9,7 +9,7 @@ import io.cucumber.plugin.event.EventPublisher;
 import io.cucumber.plugin.event.TestRunFinished;
 import io.cucumber.plugin.event.TestRunStarted;
 
-public class DriverHandler implements Plugin, ConcurrentEventListener {
+public final class DriverHandler implements Plugin, ConcurrentEventListener {
 
 	@Override
 	public void setEventPublisher(EventPublisher event) {

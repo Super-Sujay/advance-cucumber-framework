@@ -22,9 +22,11 @@ import org.apache.log4j.PatternLayout;
  * @since 06/11/2020
  *
  */
-public class LogConfig {
+public final class LogConfig {
 
 	private static Logger log;
+	
+	private LogConfig() { }
 
 	/**
 	 * Initialize the logger object.

@@ -11,7 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import io.cucumber.java8.En;
 import io.cucumber.java8.Scenario;
 
-public class LoggingHooks implements En {
+public final class LoggingHooks implements En {
 
 	public LoggingHooks() {
 		Before((Scenario sc) -> info("Scenario [" + sc.getName() + "] execution started"));

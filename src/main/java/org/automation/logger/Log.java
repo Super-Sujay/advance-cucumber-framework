@@ -10,7 +10,9 @@ import static org.automation.logger.LogConfig.getLogger;
  * @since 06/11/2020
  *
  */
-public class Log {
+public final class Log {
+	
+	private Log() { }
 
 	/**
 	 * Provides the information logs.
